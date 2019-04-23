@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+  <h1>My Vintage Camera Collection</h1>
+	<div id="myApp">
+		<table>
+			<thead>
+				<th>Camera Name</th>
+				<th>Introduced</th>
+				<th>Mount</th>
+				<th>Film</th>
+				<th>Exposure</th>
+			</thead>
+
+			<tbody>
+
+				<tr is=camera-component v-for="cameras in cameras" :name="cameras.name" :name="cameras.introduced" :mount="cameras.mount" :film="cameras.film"
+          :exposure="cameras.exposure">
+
+					</camera-component>
+
+
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<form v-on:submit.prevent="addCamera(cameras)">
+			<fieldset>
+				<legend>Add a Camera</legend>
+				<div class="form-group">
+					<label> Camera Name <input v-model="nameInput" type="text"/></label>
+                </div>
+
+                <div class="form-group">
+                  <label> Introduced <input v-model="introducedInput" type="text"/></label>
+                </div>
+
+                <div class="form-group">
+                  <label> Mount <input v-model="mountInput" type="text"/></label>
+                </div>
+
+                <div class="form-group">
+                  <label> Film <input v-model="filmInput" type="text"/></label>
+                </div>
+
+                <div class="form-group">
+                  <label> Exposure <input v-model="exposureInput" type="text"/></label>
+                </div>
+                <button type="submit"> Add a camera </button>
+              </fieldset>
+
+            </form>
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
